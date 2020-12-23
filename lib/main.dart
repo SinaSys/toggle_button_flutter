@@ -10,7 +10,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<bool> isSelected = [true, false, false];
+  List<bool> _isSelected = [false,false,false];
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,16 @@ class _MyAppState extends State<MyApp> {
               Icon(Icons.format_italic),
               Icon(Icons.link),
             ],
-            isSelected: isSelected,
+            isSelected: _isSelected,
+            borderRadius: BorderRadius.circular(30),
+            borderWidth: 5,
+            borderColor: Colors.orange,
+            selectedBorderColor: Colors.redAccent,
+            selectedColor: Colors.purple,
             onPressed: (int index) {
               setState(() {
                 print(index);
-                isSelected[index] = !isSelected[index];
+                _isSelected[index] = !_isSelected[index];
               });
             },
           ),
